@@ -1,5 +1,9 @@
 # Widget Dashboard
 
+<p align="center">
+  <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"/>
+</p>
+
 A feature-rich widget dashboard built with **React + TypeScript + Vite**, designed as a mobile-first single-page application.
 
 ## Features
