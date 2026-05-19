@@ -24,20 +24,12 @@ A feature-rich widget dashboard built with **React + TypeScript + Vite**, design
 
 ## Screenshots
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center"><img src="https://raw.githubusercontent.com/MuhammadAwais047/Widget-App/master/public/alarm.png" alt="Alarm Screen" width="240"/><br/><b>⏰ Alarm</b></td>
-      <td align="center"><img src="https://raw.githubusercontent.com/MuhammadAwais047/Widget-App/master/public/world-clock.png" alt="World Clock Screen" width="240"/><br/><b>🌍 World Clock</b></td>
-      <td align="center"><img src="https://raw.githubusercontent.com/MuhammadAwais047/Widget-App/master/public/stopwatch.png" alt="Stopwatch Screen" width="240"/><br/><b>⏱ Stopwatch</b></td>
-    </tr>
-    <tr>
-      <td align="center"><img src="https://raw.githubusercontent.com/MuhammadAwais047/Widget-App/master/public/timer.png" alt="Timer Screen" width="240"/><br/><b>⏲ Timer</b></td>
-      <td align="center"><img src="https://raw.githubusercontent.com/MuhammadAwais047/Widget-App/master/public/history.png" alt="History Screen" width="240"/><br/><b>📋 History</b></td>
-      <td align="center"><img src="https://raw.githubusercontent.com/MuhammadAwais047/Widget-App/master/public/settings.png" alt="Settings Screen" width="240"/><br/><b>⚙️ Settings</b></td>
-    </tr>
-  </table>
-</div>
+| | | |
+|---|---|---|
+| ![Alarm Screen](public/alarm.png) | ![World Clock Screen](public/world-clock.png) | ![Stopwatch Screen](public/stopwatch.png) |
+| **⏰ Alarm** | **🌍 World Clock** | **⏱ Stopwatch** |
+| ![Timer Screen](public/timer.png) | ![History Screen](public/history.png) | ![Settings Screen](public/settings.png) |
+| **⏲ Timer** | **📋 History** | **⚙️ Settings** |
 
 ## Getting Started
 
