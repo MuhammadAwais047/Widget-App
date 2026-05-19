@@ -1,0 +1,176 @@
+.stopwatch-screen {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: clamp(12px, 4vw, 24px) 0 8px;
+  background: transparent;
+}
+
+/* ── Progress Ring ── */
+.stopwatch-center {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: clamp(4px, 1.5vw, 8px) auto 0;
+}
+
+.progress-svg {
+  transform: rotate(-90deg);
+  width: min(72vw, 240px);
+  height: min(72vw, 240px);
+}
+
+.progress-bg {
+  fill: none;
+  stroke: var(--border-secondary);
+  stroke-width: 6;
+}
+
+.progress-bar {
+  fill: none;
+  stroke: var(--accent-color);
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 628;
+  stroke-dashoffset: 628;
+  transition: stroke-dashoffset 0.05s linear;
+}
+
+.time-wrapper {
+  position: absolute;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.main-time {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2rem, 8vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -1px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+}
+
+.ms-time {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 4vw, 1.5rem);
+  color: var(--accent-color);
+  font-weight: 500;
+  margin-left: 2px;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.9;
+}
+
+/* ── Controls ── */
+.control-group {
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(10px, 3vw, 16px);
+  margin: clamp(24px, 8vw, 40px) 0 clamp(16px, 5vw, 24px);
+}
+
+.btn {
+  flex: 1;
+  height: clamp(46px, 12vw, 54px);
+  border-radius: clamp(14px, 4vw, 18px);
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+}
+
+.btn-secondary:active {
+  background-color: var(--btn-secondary-active);
+}
+
+.btn-secondary:disabled {
+  opacity: 0.4;
+  cursor: default;
+  transform: none;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: #0B0F19;
+  box-shadow: 0 8px 20px rgba(var(--accent-color-rgb), 0.25);
+}
+
+.btn-primary:active {
+  filter: brightness(0.85);
+}
+
+.btn-pause {
+  background-color: var(--accent-color);
+  color: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(var(--accent-color-rgb), 0.25);
+}
+
+/* ── Lap History ── */
+.lap-container {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 4px;
+  max-height: 280px;
+  min-height: 60px;
+}
+
+
+
+.lap-empty {
+  text-align: center;
+  color: var(--text-muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  margin-top: 20px;
+}
+
+.lap-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(10px, 3vw, 14px) 0;
+  border-bottom: 1px solid var(--border-secondary);
+  font-size: clamp(0.85rem, 2.3vw, 0.95rem);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.lap-row:last-child {
+  border-bottom: none;
+}
+
+.lap-label {
+  color: var(--text-tertiary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+.lap-timestamp {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

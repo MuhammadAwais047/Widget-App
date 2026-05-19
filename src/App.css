@@ -1,0 +1,54 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(12px, 4vw, 16px) clamp(16px, 4vw, 20px);
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+@media (min-width: 430px) {
+  .app {
+    padding: 0 clamp(16px, 4vw, 20px) clamp(20px, 5vw, 24px);
+  }
+}
+
+@media (min-width: 768px) {
+  .app {
+    padding: 0 clamp(20px, 4vw, 24px) clamp(24px, 4vw, 28px);
+  }
+}
+
+.screen-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 1;
+  padding: 0 0 8px;
+  overscroll-behavior: contain;
+}
+
+.screen-content::-webkit-scrollbar {
+  width: 0;
+}
+
+.screen-transition {
+  animation: fadeSlideIn 0.3s ease-out;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

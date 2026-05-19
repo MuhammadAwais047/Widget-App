@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Invisible scrollbars — keep scrolling, hide the track */
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  overscroll-behavior: none;
+}
+
+#root {
+  /* Accent (stays same across themes) */
+  --accent-color: #FF3B30;
+  --accent-color-rgb: 255, 59, 48;
+
+  /* Dark theme (default) */
+  --bg-primary: #0F0F1A;
+  --bg-secondary: #1F293D;
+  --bg-hover: #252F44;
+  --bg-tertiary: #1A2132;
+  --bg-input: #121826;
+  --bg-app: #08080F;
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #9CA3AF;
+  --text-tertiary: #6B7280;
+  --text-muted: #4B5563;
+  --text-primary-85: rgba(255, 255, 255, 0.85);
+  --text-disabled: rgba(255, 255, 255, 0.4);
+
+  --surface-glass: rgba(255, 255, 255, 0.06);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-secondary: #1F293D;
+  --border-tertiary: #374151;
+
+  --toggle-bg: #374151;
+  --toggle-thumb: #6B7280;
+
+  --btn-secondary-bg: #1F293D;
+  --btn-secondary-text: #9CA3AF;
+  --btn-secondary-active: #2D3748;
+
+  --shadow-glow: rgba(255, 255, 255, 0.15);
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--bg-primary);
+  overflow: hidden;
+  position: relative;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Light theme */
+#root[data-theme="light"] {
+  --bg-primary: #F4F5F7;
+  --bg-secondary: #FFFFFF;
+  --bg-hover: #EEF0F3;
+  --bg-tertiary: #F8F9FA;
+  --bg-input: #E8EAED;
+  --bg-app: #D1D5DB;
+
+  --text-primary: #1A1A2E;
+  --text-secondary: #4B5563;
+  --text-tertiary: #6B7280;
+  --text-muted: #9CA3AF;
+  --text-primary-85: rgba(26, 26, 46, 0.85);
+  --text-disabled: rgba(26, 26, 46, 0.4);
+
+  --surface-glass: rgba(0, 0, 0, 0.04);
+  --border-glass: rgba(0, 0, 0, 0.06);
+  --border-secondary: #E5E7EB;
+  --border-tertiary: #D1D5DB;
+
+  --toggle-bg: #D1D5DB;
+  --toggle-thumb: #9CA3AF;
+
+  --btn-secondary-bg: #E5E7EB;
+  --btn-secondary-text: #4B5563;
+  --btn-secondary-active: #D1D5DB;
+
+  --shadow-glow: rgba(0, 0, 0, 0.12);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: rgba(var(--accent-color-rgb), 0.3);
+  color: var(--text-primary);
+}
+
+/* Mobile (small phones): full width, small phone frame */
+@media (min-width: 375px) {
+  #root {
+    border-radius: 24px 24px 28px 28px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Tablet: centered with max-width */
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: var(--bg-app);
+    padding: 24px 0;
+  }
+
+  #root {
+    width: 100%;
+    max-width: 480px;
+    min-height: 100vh;
+    border-radius: 28px;
+    margin: 0 auto;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Desktop: tighter phone frame */
+@media (min-width: 1024px) {
+  body {
+    padding: 20px 0;
+  }
+
+  #root {
+    max-width: 440px;
+    min-height: 844px;
+    border-radius: 32px;
+    margin: 0 auto;
+  }
+}

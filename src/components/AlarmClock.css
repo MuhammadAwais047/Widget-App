@@ -1,0 +1,293 @@
+.alarm-screen {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(12px, 4vw, 20px) 0 8px;
+}
+
+/* ── Day Labels ── */
+.alarm-days {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 0 clamp(14px, 4vw, 20px);
+  max-width: 100%;
+}
+
+.alarm-day {
+  width: clamp(30px, 8vw, 36px);
+  height: clamp(30px, 8vw, 36px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.7rem, 2vw, 0.85rem);
+  color: var(--text-muted);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.alarm-day.active {
+  background: var(--accent-color);
+  color: #0B0F19;
+  box-shadow: 0 0 14px rgba(var(--accent-color-rgb), 0.35);
+}
+
+/* ── Clock Face ── */
+.alarm-clock-face {
+  position: relative;
+  width: min(72vw, 240px);
+  height: min(72vw, 240px);
+  margin: 0 auto clamp(4px, 1.5vw, 8px);
+}
+
+/* Outer ring decoration */
+.alarm-clock-face::before {
+  content: '';
+  position: absolute;
+  inset: -3%;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(var(--accent-color-rgb), 0.08), rgba(var(--accent-color-rgb), 0.02), rgba(var(--accent-color-rgb), 0.08));
+}
+
+/* ── Tick Marks ── */
+.clock-ticks {
+  position: absolute;
+  inset: 3%;
+}
+
+.tick {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1.5px;
+  height: 6px;
+  margin-left: -0.75px;
+  background: var(--border-secondary);
+  transform-origin: bottom center;
+}
+
+.tick.medium {
+  height: 8px;
+  width: 1.5px;
+  background: var(--border-tertiary);
+}
+
+.tick.major {
+  height: 11px;
+  width: 2px;
+  background: var(--text-secondary);
+}
+
+/* ── Numbers ── */
+.clock-nums {
+  position: absolute;
+  inset: 8%;
+}
+
+.clock-num {
+  position: absolute;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+}
+
+.clock-num.num-12 {
+  top: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.clock-num.num-3 {
+  top: 50%;
+  right: 4%;
+  transform: translateY(-50%);
+}
+
+.clock-num.num-6 {
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.clock-num.num-9 {
+  top: 50%;
+  left: 4%;
+  transform: translateY(-50%);
+}
+
+/* ── Gradient Ring ── */
+.clock-ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* ── Clock Hands ── */
+.clock-hands {
+  position: absolute;
+  inset: 0;
+}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  border-radius: 2px;
+}
+
+.hour-hand {
+  width: 3px;
+  height: 23%;
+  margin-left: -1.5px;
+  background: var(--text-primary);
+}
+
+.minute-hand {
+  width: 2px;
+  height: 33%;
+  margin-left: -1px;
+  background: var(--text-primary);
+}
+
+.second-hand {
+  width: 1.5px;
+  height: 37%;
+  margin-left: -0.75px;
+  background: var(--accent-color);
+  box-shadow: 0 0 8px rgba(var(--accent-color-rgb), 0.5);
+}
+
+.clock-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  box-shadow: 0 0 12px rgba(var(--accent-color-rgb), 0.5);
+}
+
+/* ── Digital Time ── */
+.clock-digital {
+  text-align: center;
+  margin: clamp(2px, 1vw, 4px) auto clamp(16px, 5vw, 24px);
+}
+
+.digi-time {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 5.5vw, 2rem);
+  color: var(--text-primary);
+  letter-spacing: clamp(1.5px, 0.8vw, 3px);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Alarm Schedule ── */
+.alarm-schedule {
+  padding: 0;
+}
+
+.alarm-schedule-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.78rem, 2.2vw, 0.85rem);
+  color: var(--text-tertiary);
+  margin: 0 0 clamp(10px, 3vw, 14px);
+  letter-spacing: 0.5px;
+}
+
+.alarm-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.alarm-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(10px, 3vw, 14px) clamp(12px, 3.5vw, 16px);
+  background: var(--bg-secondary);
+  border-radius: clamp(12px, 3vw, 16px);
+  transition: background 0.2s ease;
+}
+
+.alarm-row:hover {
+  background: var(--bg-hover);
+}
+
+.alarm-row-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.alarm-row-time {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.95rem, 2.8vw, 1.1rem);
+  color: var(--text-primary);
+  letter-spacing: 1px;
+  font-variant-numeric: tabular-nums;
+}
+
+.alarm-row-label {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.7rem, 2vw, 0.78rem);
+  color: var(--text-tertiary);
+}
+
+/* ── Toggle Switch ── */
+.alarm-toggle {
+  position: relative;
+  display: block;
+  width: clamp(38px, 10vw, 44px);
+  height: clamp(22px, 6vw, 26px);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.alarm-toggle input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-track {
+  position: absolute;
+  inset: 0;
+  background: var(--toggle-bg);
+  border-radius: 13px;
+  transition: background 0.3s ease;
+}
+
+.toggle-track::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: clamp(16px, 4vw, 20px);
+  height: clamp(16px, 4vw, 20px);
+  border-radius: 50%;
+  background: var(--toggle-thumb);
+  transition: all 0.3s ease;
+}
+
+.alarm-toggle input:checked + .toggle-track {
+  background: var(--accent-color);
+  box-shadow: 0 0 10px rgba(var(--accent-color-rgb), 0.25);
+}
+
+.alarm-toggle input:checked + .toggle-track::after {
+  left: calc(100% - clamp(19px, 5vw, 23px));
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

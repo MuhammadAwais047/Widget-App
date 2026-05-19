@@ -1,0 +1,192 @@
+.timer-screen {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: clamp(12px, 4vw, 24px) 0 8px;
+  background: transparent;
+}
+
+/* ── Time Display ── */
+.timer-time-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: clamp(20px, 6vw, 40px) auto clamp(8px, 2.5vw, 12px);
+}
+
+.timer-main-time {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(3rem, 12vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -1px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-primary);
+}
+
+.timer-main-time.complete {
+  color: var(--text-muted);
+  animation: pulseComplete 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseComplete {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* ── Duration Adjust ── */
+.timer-adjust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 3vw, 16px);
+  margin-top: clamp(8px, 2.5vw, 12px);
+}
+
+.timer-adjust-btn {
+  width: clamp(36px, 10vw, 44px);
+  height: clamp(36px, 10vw, 44px);
+  border-radius: 50%;
+  border: 1px solid var(--border-secondary);
+  background: transparent;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.timer-adjust-btn:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  background: rgba(var(--accent-color-rgb), 0.08);
+}
+
+.timer-adjust-btn:active {
+  transform: scale(0.92);
+}
+
+.timer-adjust-label {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.9rem, 2.8vw, 1.1rem);
+  font-weight: 500;
+  color: var(--text-tertiary);
+  min-width: clamp(48px, 14vw, 60px);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Presets ── */
+.timer-presets {
+  display: flex;
+  justify-content: center;
+  gap: clamp(6px, 2vw, 10px);
+  margin: clamp(14px, 5vw, 20px) 0 8px;
+  flex-wrap: wrap;
+}
+
+.timer-preset-chip {
+  padding: clamp(6px, 1.8vw, 8px) clamp(12px, 4vw, 18px);
+  border-radius: 20px;
+  border: 1px solid var(--border-secondary);
+  background: transparent;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.75rem, 2.2vw, 0.85rem);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.timer-preset-chip:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  background: rgba(var(--accent-color-rgb), 0.08);
+}
+
+.timer-preset-chip:active {
+  transform: scale(0.96);
+}
+
+.timer-preset-chip.active {
+  border-color: var(--accent-color);
+  background: rgba(var(--accent-color-rgb), 0.12);
+  color: var(--accent-color);
+}
+
+/* ── Completion Message ── */
+.timer-complete-msg {
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-top: clamp(8px, 2.5vw, 12px);
+  animation: fadeSlideDown 0.4s ease-out;
+}
+
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Controls ── */
+.timer-control-group {
+  display: flex;
+  gap: clamp(10px, 3vw, 16px);
+  margin: clamp(20px, 7vw, 32px) 0 clamp(16px, 5vw, 24px);
+}
+
+.timer-btn {
+  flex: 1;
+  height: clamp(46px, 12vw, 54px);
+  border-radius: clamp(14px, 4vw, 18px);
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timer-btn:active {
+  transform: scale(0.98);
+}
+
+.timer-btn-single {
+  flex: 0 1 50%;
+  margin: 0 auto;
+}
+
+.timer-btn-secondary {
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  flex: 0 1 auto;
+  padding: 0 clamp(12px, 4vw, 24px);
+}
+
+.timer-btn-secondary:active {
+  background-color: var(--btn-secondary-active);
+}
+
+.timer-btn-primary {
+  background-color: var(--accent-color);
+  color: #0B0F19;
+  box-shadow: 0 8px 20px rgba(var(--accent-color-rgb), 0.25);
+}
+
+.timer-btn-primary:active {
+  filter: brightness(0.85);
+}
+
+.timer-btn-pause {
+  background-color: var(--accent-color);
+  color: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(var(--accent-color-rgb), 0.25);
+}
