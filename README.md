@@ -24,12 +24,11 @@ A feature-rich widget dashboard built with **React + TypeScript + Vite**, design
 
 ## Screenshots
 
-| | | |
+| ⏰ Alarm | 🌍 World Clock | ⏱ Stopwatch |
 |---|---|---|
 | ![Alarm Screen](public/alarm.png) | ![World Clock Screen](public/world-clock.png) | ![Stopwatch Screen](public/stopwatch.png) |
-| **⏰ Alarm** | **🌍 World Clock** | **⏱ Stopwatch** |
+| ⏲ Timer | 📋 History | ⚙️ Settings |
 | ![Timer Screen](public/timer.png) | ![History Screen](public/history.png) | ![Settings Screen](public/settings.png) |
-| **⏲ Timer** | **📋 History** | **⚙️ Settings** |
 
 ## Getting Started
 
