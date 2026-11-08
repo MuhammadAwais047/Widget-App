@@ -30,3 +30,9 @@ coverage
 
 # TypeScript
 *.tsbuildinfo
+
+# Secrets — never commit
+.env.*
+!.env.example
+*.pem
+*.key
